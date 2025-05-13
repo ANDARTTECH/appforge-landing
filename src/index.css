@@ -1,0 +1,41 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+* {
+  transition: background-color 0.4s ease,
+              border-color     0.4s ease,
+              color            0.4s ease;
+}
+
+
+.no-fade,
+img {
+  transition: none;
+}
+
+
+@layer utilities {
+
+  
+  .active-link {
+    @apply text-indigo-400 relative;
+  }
+
+  .active-link::after {
+    content: "";
+    @apply absolute left-0 -bottom-1 h-0.5 w-full bg-indigo-400;
+  }
+
+  
+  .lift-sm {
+    @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+}
