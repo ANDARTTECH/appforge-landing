@@ -6,16 +6,18 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
+
     "build": "vite build",
     "analyze": "vite build --mode analyze && open dist/report.html",
     "serve": "serve -s dist",
+
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
+
     "pwa": "vite build",
     "check": "npm run lint && npm run format -- --check",
     "a11y": "eslint --plugin jsx-a11y \"src/**/*.{js,jsx,ts,tsx}\"",
-    "sitemap": "vite build",
-    "optimize-img": "echo \"vite-imagetools CLI not available; images optimized during build\""
+    "sitemap": "vite build"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.2",
@@ -32,6 +34,7 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
+
     "autoprefixer": "^10.4.21",
     "eslint": "^9.25.0",
     "eslint-config-prettier": "^9.1.0",
@@ -41,12 +44,15 @@
     "globals": "^16.0.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
+
     "vite": "^6.3.5",
     "prettier": "^3.3.2",
     "rollup-plugin-visualizer": "^5.12.0",
     "serve": "^14.2.0",
+
     "vite-plugin-pwa": "^1.0.0",
     "vite-plugin-sitemap": "^0.7.1",
-    "vite-imagetools": "^7.1.0"
+    "vite-imagetools": "^7.1.0",
+    "vite-plugin-compression": "^0.5.1"
   }
 }
