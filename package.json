@@ -15,7 +15,8 @@
     "check": "npm run lint && npm run format -- --check",
     "a11y": "eslint --plugin jsx-a11y \"src/**/*.{js,jsx,ts,tsx}\"",
     "sitemap": "vite build",
-    "test": "vitest"
+    "test": "vitest",
+    "lhci": "lhci autorun --upload.target=temporary-public-storage"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.2",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
+    "@lhci/cli": "^0.14.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
