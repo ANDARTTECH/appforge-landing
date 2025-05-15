@@ -1,6 +1,6 @@
 // src/MobileDevSite.jsx
 import React from "react";
-import { motion } from "framer-motion";
+imort { motion } from "framer-motion";
 import AnimatedSection from "./components/AnimatedSection.jsx";
 
 const gridVariants = {
