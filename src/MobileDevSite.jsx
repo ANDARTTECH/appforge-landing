@@ -1,26 +1,27 @@
 // src/MobileDevSite.jsx
-import React from "react";
-import { motion } from "framer-motion";
+import React        from "react";
+import { motion }   from "framer-motion";
 import AnimatedSection from "./components/AnimatedSection.jsx";
 
+/* ------------------------------------------------------------------ */
+/* анимации */
+
 const gridVariants = {
-  hidden: {},
+  hidden:  {},
   visible: {
-    transition: {
-      /* задержка между карточками */
-      staggerChildren: 0.15,
-    },
+    transition: { staggerChildren: 0.15 },
   },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden:  { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.5, ease: "easeOut" },
   },
 };
+
 /* ------------------------------------------------------------------ */
 
 export default function MobileDevSite() {
@@ -67,14 +68,8 @@ export default function MobileDevSite() {
         >
           {[
             { title: "Нативные приложения", desc: "iOS и Android с высоким FPS" },
-            {
-              title: "Кросс-платформа",
-              desc: "Flutter и React Native под один бюджет",
-            },
-            {
-              title: "Вывод на рынок",
-              desc: "Публикация, аналитика, поддержка",
-            },
+            { title: "Кросс-платформа",     desc: "Flutter и React Native под один бюджет" },
+            { title: "Вывод на рынок",      desc: "Публикация, аналитика, поддержка" },
           ].map((s) => (
             <motion.div
               key={s.title}
@@ -109,20 +104,11 @@ export default function MobileDevSite() {
           className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3"
         >
           {[
-            { src: "/portfolio/repeats.png", alt: "RepEats — доставка еды" },
-            { src: "/portfolio/qvedo.png", alt: "Qvedo — сервис путешествий" },
-            {
-              src: "/portfolio/clever-market.png",
-              alt: "Clever Market — интернет-магазин",
-            },
-            {
-              src: "/portfolio/planner.png",
-              alt: "Ежедневник / Планер дел",
-            },
-            {
-              src: "/portfolio/vivendi.png",
-              alt: "Vivendi — fashion e-commerce",
-            },
+            { src: "/portfolio/repeats.png",        alt: "RepEats — доставка еды" },
+            { src: "/portfolio/qvedo.png",          alt: "Qvedo — сервис путешествий" },
+            { src: "/portfolio/clever-market.png",  alt: "Clever Market — интернет-магазин" },
+            { src: "/portfolio/planner.png",        alt: "Ежедневник / Планер дел" },
+            { src: "/portfolio/vivendi.png",        alt: "Vivendi — fashion e-commerce" },
           ].map((p) => (
             <motion.img
               key={p.src}
@@ -139,13 +125,8 @@ export default function MobileDevSite() {
       </AnimatedSection>
 
       {/* ---------- Contact ---------- */}
-      <AnimatedSection
-        id="contact"
-        className="max-w-3xl mx-auto py-24 px-4 scroll-mt-20"
-      >
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Обсудим вашу идею?
-        </h2>
+      <AnimatedSection id="contact" className="max-w-3xl mx-auto py-24 px-4 scroll-mt-20">
+        <h2 className="text-3xl font-bold text-center mb-12">Обсудим вашу идею?</h2>
 
         <form
           onSubmit={(e) => {
@@ -154,68 +135,18 @@ export default function MobileDevSite() {
           }}
           className="grid gap-4"
         >
-          <input
-            type="text"
-            placeholder="Ваше имя"
-            className="
-              p-3 rounded-2xl border shadow-sm focus:ring-2 focus:ring-indigo-500
-              dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100
-              dark:placeholder-gray-500 dark:focus:ring-indigo-400
-            "
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="
-              p-3 rounded-2xl border shadow-sm focus:ring-2 focus:ring-indigo-500
-              dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100
-              dark:placeholder-gray-500 dark:focus:ring-indigo-400
-            "
-            required
-          />
-          <textarea
-            rows={4}
-            placeholder="Расскажите о проекте"
-            className="
-              p-3 rounded-2xl border shadow-sm focus:ring-2 focus:ring-indigo-500
-              dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100
-              dark:placeholder-gray-500 dark:focus:ring-indigo-400
-            "
-            required
-          ></textarea>
-
-          <button
-            type="submit"
-            className="
-              justify-self-center bg-indigo-600 text-white font-semibold px-6 py-3
-              rounded-2xl shadow-lg hover:bg-indigo-700 transition
-            "
-          >
-            Отправить
-          </button>
+          {/* … поля формы … */}
         </form>
       </AnimatedSection>
 
       {/* ---------- Footer ---------- */}
       <footer className="bg-gray-900 text-gray-300 dark:bg-gray-950 dark:text-gray-400 py-8">
-        <div
-          className="
-            max-w-7xl mx-auto px-4 flex flex-col md:flex-row
-            justify-between items-center gap-4
-          "
-        >
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>© {new Date().getFullYear()} AppForge. Все права защищены.</p>
           <nav className="space-x-4">
-            <a href="#" className="hover:text-white">
-              LinkedIn
-            </a>
-            <a href="#" className="hover:text-white">
-              GitHub
-            </a>
-            <a href="#" className="hover:text-white">
-              Telegram
-            </a>
+            <a href="#" className="hover:text-white">LinkedIn</a>
+            <a href="#" className="hover:text-white">GitHub</a>
+            <a href="#" className="hover:text-white">Telegram</a>
           </nav>
         </div>
       </footer>

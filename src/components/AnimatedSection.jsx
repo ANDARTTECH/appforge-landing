@@ -1,29 +1,24 @@
-// Универсальная обёртка секций c появлением снизу-вверх
 import { motion } from "framer-motion";
 
-const defaultVariants = {
-  hidden:  { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0 },
-};
-
+/**
+ * Секция, плавно появляющаяся при прокрутке.
+ * Используйте вместо обычного <section>.
+ */
 export default function AnimatedSection({
-  id,
-  className = "",
   children,
-  variants = defaultVariants,
+  className = "",
+  ...rest
 }) {
   return (
     <motion.section
-      id={id}
+      {...rest}
       className={className}
-      variants={variants}
-      initial="hidden"
-      whileInView="visible"
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {children}
     </motion.section>
   );
 }
-
